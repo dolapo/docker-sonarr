@@ -2,6 +2,7 @@
 
 echo "Europe/London" > /etc/timezone
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
+dpkg-reconfigure -f noninteractive tzdata >/dev/null 2>&1
 
 # cleanup pid if it exists
 [[ -e /config/nzbdrone.pid ]] && rm -rf /config/nzbdrone.pid
